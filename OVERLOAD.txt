@@ -1,0 +1,47 @@
+-------------------CODE-----------------------------
+import java.util.*;
+
+    class Function{
+         void shape(float r){
+            System.out.println("the area of circle is"+(r*3.14*r));
+        }
+         void shape(int l,int b){
+            System.out.println("the area of rectangle is"+(l*b));  
+        }
+         void shape(int s){
+            System.out.println("the area of square is"+(s*s));
+
+        }
+    }
+
+ class Overload {
+    public static void main(String h[]) {
+        Scanner sc=new Scanner(System.in);
+        Function f=new Function();
+        int l=0,b=0,s=0;
+        float r=0;
+        System.out.println("enter the radius of circle : ");
+        r=sc.nextFloat();
+        System.out.println("enter the length and breadth of rectangle : ");
+        l=sc.nextInt();
+        b=sc.nextInt();
+        System.out.println("enter the length of square :");
+        s=sc.nextInt();
+        f.shape(r);
+        f.shape(l, b);
+        f.shape(s);
+
+    }
+}
+--------------------------------------------------------
+OUTPUT:
+enter the radius of circle :
+3.14
+enter the length and breadth of rectangle :
+12
+24
+enter the length of square :
+25
+the area of circle is30.95914606862644
+the area of rectangle is288
+the area of square is625

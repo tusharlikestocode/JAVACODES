@@ -1,0 +1,75 @@
+------------------------CODE---------------------------
+import java.util.*;
+import java.lang.*;
+class Register extends Exception
+{
+    Register(String str){
+        super(str);
+    }
+    public static void main(String h[]) {
+        Scanner sc=new Scanner(System.in);
+        int wt,age;
+        System.out.println("enter your age:\n");
+        age=sc.nextInt();
+        System.out.println("enter your weight:\n");
+        wt=sc.nextInt();
+        try{
+            if(age<=10 || wt<=40){
+                Register r = new Register("NOT ELIGIBLE");
+                throw r;
+            }
+            else{
+                System.out.println("REGISTERED");
+            }
+        }catch(Register r){
+            System.out.println("Exception is " + r);
+        }
+     
+    }
+}
+----------------------------------------------------------------------
+OUTPUT:
+enter your age:
+9 
+enter your weight:
+39
+Exception is Register: NOT ELIGIBLE
+=======================================================================
+--------------------CODE-----------------------------------------------
+import java.util.*;
+import java.lang.*;
+class Atm extends Exception
+{
+    Atm(String str){
+        super(str);
+    }
+    public static void main(String h[]) {
+        Scanner sc=new Scanner(System.in);
+        int amt,bal;
+        System.out.println("WELCOME TO THE BANK");
+        System.out.println("Enter your balance:\n");
+        bal=sc.nextInt();
+        System.out.println("Enter the amount to be withdrawn:\n");
+        amt=sc.nextInt();
+        try{
+            if(amt>bal){
+                Atm r = new Atm("INSUFFICENT BALANCE");
+                throw r;
+            }
+            else{
+                System.out.println("COLLECTED YOUR CASH");
+            }
+        }catch(Atm r){
+            System.out.println("Exception is " + r);
+        }
+     
+    }
+}
+---------------------------------------------------------------
+OUTPUT:
+WELCOME TO THE BANK
+Enter your balance:
+5000
+Enter the amount to be withdrawn:
+100000
+Exception is Atm: INSUFFICENT BALANCE
